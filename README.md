@@ -11,5 +11,5 @@
     npm init -y
 ```
 
-"author": "<My Name>",
+"author": "Hwang jinseop",
 "License": "MIT"
