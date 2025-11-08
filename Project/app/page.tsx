@@ -1,27 +1,36 @@
 import HeroSection from "@/components/HeroSection";
 import FeatureGrid from "@/components/FeatureGrid";
+import {Feature} from "@/components/FeatureGrid";
 
 // 기능 데이터 배열
-const features = [
+const features: Feature[] = [
   {
+    icon: "fa-dragon",
+    iconColor: "blue",
     title: "포켓몬 목록 보기",
     description: "모든 포켓몬의 목록을 확인하고 탐색할 수 있습니다.",
     href: "/pokemon",
     buttonText: "포켓몬 목록 보기",
   },
   {
+    icon: "fa-search",
+    iconColor: "black",
     title: "포켓몬 검색",
     description: "이름, 타입, 카테고리로 포켓몬을 검색할 수 있습니다.",
     href: "/pokemon",
     buttonText: "검색하기",
   },
   {
+    icon: "fa-chart-bar",
+    iconColor: "green",
     title: "통계 조회",
     description: "포켓몬의 타입별, 카테고리별 통계를 확인할 수 있습니다.",
     href: "/stats",
     buttonText: "통계 보기",
   },
   {
+    icon: "fa-code",
+    iconColor: "yellow",
     title: "API 문서",
     description:
       "RESTful API를 통해 프로그래밍 방식으로 데이터에 접근할 수 있습니다.",
@@ -29,6 +38,8 @@ const features = [
     buttonText: "API 정보",
   },
   {
+    icon: "fa-heartbeat",
+    iconColor: "red",
     title: "시스템 상태",
     description:
       "서버 상태, 가동 시간, 메모리 사용량 등 시스템 정보를 확인할 수 있습니다.",
@@ -36,14 +47,6 @@ const features = [
     buttonText: "API 상태",
     fullWidth: true, // 이 카드는 전체 너비 사용
   },
-  {
-    title: "test",
-    description:
-      "테스트",
-    href: "/test",
-    buttonText: "Test",
-    fullWidth: true,
-  }
 ];
 
 export default function Home() {

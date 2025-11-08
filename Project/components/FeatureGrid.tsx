@@ -1,5 +1,6 @@
 import FeatureCard from "./FeatureCard";
 import Grid from "@/components/ui/Grid";
+import type { IconProps } from "@/components/ui/Icon";
 
 interface Feature {
   title: string;
@@ -7,6 +8,8 @@ interface Feature {
   href: string;
   buttonText: string;
   fullWidth?: boolean;
+  icon?: string;
+  iconColor?: IconProps["color"];
 }
 
 interface FeatureGridProps {
@@ -30,6 +33,8 @@ export default function FeatureGrid({ features }: FeatureGridProps) {
           href={feature.href}
           buttonText={feature.buttonText}
           fullWidth={feature.fullWidth}
+          icon={feature.icon}
+          iconColor={feature.iconColor}
         />
       ))}
     </Grid>
