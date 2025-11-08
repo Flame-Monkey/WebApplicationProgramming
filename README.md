@@ -8,7 +8,7 @@
 
 ## DataStructure 
 
-- 자료구조 구현 과제 모음
+- 자료구조 구현 과제
 
 ## PracticeServer
 - 서버 학습

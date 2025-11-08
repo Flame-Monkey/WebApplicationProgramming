@@ -1,65 +1,68 @@
-import Image from "next/image";
+import HeroSection from "@/components/HeroSection";
+import FeatureGrid from "@/components/FeatureGrid";
+
+// 기능 데이터 배열
+const features = [
+  {
+    title: "포켓몬 목록 보기",
+    description: "모든 포켓몬의 목록을 확인하고 탐색할 수 있습니다.",
+    href: "/pokemon",
+    buttonText: "포켓몬 목록 보기",
+  },
+  {
+    title: "포켓몬 검색",
+    description: "이름, 타입, 카테고리로 포켓몬을 검색할 수 있습니다.",
+    href: "/pokemon",
+    buttonText: "검색하기",
+  },
+  {
+    title: "통계 조회",
+    description: "포켓몬의 타입별, 카테고리별 통계를 확인할 수 있습니다.",
+    href: "/stats",
+    buttonText: "통계 보기",
+  },
+  {
+    title: "API 문서",
+    description:
+      "RESTful API를 통해 프로그래밍 방식으로 데이터에 접근할 수 있습니다.",
+    href: "/api-docs",
+    buttonText: "API 정보",
+  },
+  {
+    title: "시스템 상태",
+    description:
+      "서버 상태, 가동 시간, 메모리 사용량 등 시스템 정보를 확인할 수 있습니다.",
+    href: "/health",
+    buttonText: "API 상태",
+    fullWidth: true, // 이 카드는 전체 너비 사용
+  },
+  {
+    title: "test",
+    description:
+      "테스트",
+    href: "/test",
+    buttonText: "Test",
+    fullWidth: true,
+  }
+];
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
+    <div className="min-h-screen bg-gray-50">
+      {/*
+        min-h-screen: 최소 높이를 화면 전체로 설정
+        bg-gray-50: 배경 연한 회색
+      */}
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        {/*
+          max-w-4xl: 최대 너비 896px
+          mx-auto: 가로 중앙 정렬
+          px-4 sm:px-6 lg:px-8: 반응형 좌우 여백
+          py-12: 상하 여백 3rem
+        */}
+        <HeroSection />
+        <FeatureGrid features={features} />
+      </div>
     </div>
   );
 }
