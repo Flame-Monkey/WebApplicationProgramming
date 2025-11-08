@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import "./globals.css";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-import "./globals.css";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -25,13 +25,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ko">
+    <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <Navigation />
-        <main>{children}</main>
-        {/* children: 각 페이지의 내용 */}
+        <main className="min-h-screen container mx-auto px-4 py-8">
+          {children}
+        </main>
         <Footer />
       </body>
-    </html >
+    </html>
   );
 }

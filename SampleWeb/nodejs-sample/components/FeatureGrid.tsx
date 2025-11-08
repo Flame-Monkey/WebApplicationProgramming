@@ -2,7 +2,7 @@ import FeatureCard from "./FeatureCard";
 import Grid from "@/components/ui/Grid";
 import type { IconProps } from "@/components/ui/Icon";
 
-interface Feature {
+export interface Feature {
   title: string;
   description: string;
   href: string;
