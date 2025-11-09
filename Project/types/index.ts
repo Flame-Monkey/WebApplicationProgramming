@@ -10,7 +10,7 @@ export interface Cat {
   cost: number;
   recharge: number;
   abilities: string[];
-  targetAttributes?: ('빨간적' | '떠있는적' | '메탈적' | '무속성적' | '천사적' | '흑적' | '좀비적' | '에일리언적' | '없음')[];
+  targetAttributes?: ('빨간적' | '떠있는적' | '메탈적' | '무속성적' | '천사적' | '흑적' | '좀비적' | '에일리언적')[];
   effects?: ('느리게한다' | '멈추게한다' | '공격력다운' | '없음')[];
   baseLevel?: number;
   hpPerLevel?: number;
