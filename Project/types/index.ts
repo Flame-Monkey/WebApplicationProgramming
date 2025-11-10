@@ -72,3 +72,5 @@ export interface MonthlyMission {
     completed: boolean;
   }[];
 }
+
+export type theme = "black" | "blue" | "cyan" | "red" | "green";

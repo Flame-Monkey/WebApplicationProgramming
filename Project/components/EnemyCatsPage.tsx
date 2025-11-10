@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Input } from './ui/input';
-import { Card } from './ui/card';
+import Card from './ui/card';
 import { Badge } from './ui/badge';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from './ui/table';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from './ui/dialog';

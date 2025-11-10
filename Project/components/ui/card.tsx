@@ -1,92 +1,56 @@
-import * as React from "react";
-
+import { ReactNode } from "react";
 import { cn } from "./utils";
+import { theme } from "@/types";
 
-function Card({ className, ...props }: React.ComponentProps<"div">) {
-  return (
-    <div
-      data-slot="card"
-      className={cn(
-        "bg-card text-card-foreground flex flex-col gap-6 rounded-xl border",
-        className,
-      )}
-      {...props}
-    />
-  );
+export interface CardProps {
+  children: ReactNode; // 카드 안에 들어갈 내용
+  className?: string;  // 추가 CSS 클래스
+  variant?: "default" | "outlined" | "elevated"; // 스타일 변형
+  padding?: "sm" | "md" | "lg"; // 안쪽 여백 크기
+  color?: theme;
 }
 
-function CardHeader({ className, ...props }: React.ComponentProps<"div">) {
-  return (
-    <div
-      data-slot="card-header"
-      className={cn(
-        "@container/card-header grid auto-rows-min grid-rows-[auto_auto] items-start gap-1.5 px-6 pt-6 has-data-[slot=card-action]:grid-cols-[1fr_auto] [.border-b]:pb-6",
-        className,
-      )}
-      {...props}
-    />
-  );
-}
-
-function CardTitle({ className, ...props }: React.ComponentProps<"div">) {
-  return (
-    <h4
-      data-slot="card-title"
-      className={cn("leading-none", className)}
-      {...props}
-    />
-  );
-}
-
-function CardDescription({ className, ...props }: React.ComponentProps<"div">) {
-  return (
-    <p
-      data-slot="card-description"
-      className={cn("text-muted-foreground", className)}
-      {...props}
-    />
-  );
-}
-
-function CardAction({ className, ...props }: React.ComponentProps<"div">) {
-  return (
-    <div
-      data-slot="card-action"
-      className={cn(
-        "col-start-2 row-span-2 row-start-1 self-start justify-self-end",
-        className,
-      )}
-      {...props}
-    />
-  );
-}
-
-function CardContent({ className, ...props }: React.ComponentProps<"div">) {
-  return (
-    <div
-      data-slot="card-content"
-      className={cn("px-6 [&:last-child]:pb-6", className)}
-      {...props}
-    />
-  );
-}
-
-function CardFooter({ className, ...props }: React.ComponentProps<"div">) {
-  return (
-    <div
-      data-slot="card-footer"
-      className={cn("flex items-center px-6 pb-6 [.border-t]:pt-6", className)}
-      {...props}
-    />
-  );
-}
-
-export {
-  Card,
-  CardHeader,
-  CardFooter,
-  CardTitle,
-  CardAction,
-  CardDescription,
-  CardContent,
+// variant별 스타일 정의
+const variantStyles = {
+  default: "bg-white shadow-md hover:shadow-lg",
+  outlined: "bg-white border border-gray-200 hover:border-gray-300",
+  elevated: "bg-white shadow-lg hover:shadow-xl",
 };
+
+// padding별 스타일 정의
+const paddingStyles = {
+  sm: "p-4", // 작은 여백 (1rem)
+  md: "p-6", // 중간 여백 (1.5rem)
+  lg: "p-8", // 큰 여백 (2rem)
+};  
+
+const borderColors = {
+  black: "border-black-200",
+  blue: "border-blue-200",
+  red: "border-red-200",
+  green: "border-green-200",
+  cyan: "border-cyan-200",
+  
+}
+
+export default function Card({
+  children,
+  className,
+  variant = "default",
+  padding = "md",
+  color = "black"
+}: CardProps) {
+  return (
+    <div
+      className={cn(
+        "rounded-lg transition-shadow cursor-pointer group border-2 flex flex-col text-center items-center gap-6", // 기본 스타일: 둥근 모서리, 그림자 전환
+        variantStyles[variant], // 선택한 variant 스타일
+        paddingStyles[padding], // 선택한 padding 크기
+        borderColors[color],
+        className // 추가 클래스
+      )}
+    >
+      {children}
+    </div>
+  );
+}
