@@ -84,15 +84,18 @@ export default function AllyCatsPage() {
   };
 
   const filteredCats = allyCats.filter((cat) => {
+    // 이름 필터
     const matchesSearch = cat.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
       cat.nameKo.includes(searchTerm);
+    // 레어도 필터
     const matchesRarity = selectedRarity === 'all' || cat.rarity === selectedRarity;
     
+    // 대상 속성 필터
     let matchesTarget = false;
     if (selectedTargets.includes('all')) {
       matchesTarget = true;
     } else {
-      const catTargets = cat.targetAttributes || ['없음'];
+      const catTargets = cat.targetAttributes as string[];
       if (targetFilterMode === 'OR') {
         matchesTarget = selectedTargets.some(target => catTargets.includes(target));
       } else {
@@ -100,11 +103,12 @@ export default function AllyCatsPage() {
       }
     }
 
+    // 효과 필터
     let matchesEffect = false;
     if (selectedEffects.includes('all')) {
       matchesEffect = true;
     } else {
-      const catEffects = cat.effects || ['없음'];
+      const catEffects = cat.effects as string[];
       if (effectFilterMode === 'OR') {
         matchesEffect = selectedEffects.some(effect => catEffects.includes(effect));
       } else {

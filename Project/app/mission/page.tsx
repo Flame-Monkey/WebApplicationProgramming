@@ -379,11 +379,11 @@ export default function MonthlyMissionPage() {
                           <Card 
                             key={stage.id} 
                             className="p-4 hover:shadow-md transition-shadow cursor-pointer"
-                            onClick={() => {
-                              setSelectedStage(stage);
-                              setSelectedStageStarLevel(1);
-                              setIsDialogOpen(true);
-                            }}
+                            // onClick={() => {
+                            //   setSelectedStage(stage);
+                            //   setSelectedStageStarLevel(1);
+                            //   setIsDialogOpen(true);
+                            // }}
                           >
                             <div className="flex items-start justify-between mb-2">
                               <div>
@@ -581,22 +581,22 @@ export default function MonthlyMissionPage() {
                       <Card 
                         key={idx} 
                         className="p-4 bg-gray-50 border-2 cursor-pointer hover:bg-gray-100 transition-all"
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          const enemyDetails = getEnemyDetails(enemy.name);
-                          if (enemyDetails) {
-                            const multiplier = isLegendStory(selectedStage.mapType) 
-                              ? getEnemyMultiplier(enemy, selectedStageStarLevel) || 100
-                              : 100;
+                        // onClick={(e) => {
+                        //   e.stopPropagation();
+                        //   const enemyDetails = getEnemyDetails(enemy.name);
+                        //   if (enemyDetails) {
+                        //     const multiplier = isLegendStory(selectedStage.mapType) 
+                        //       ? getEnemyMultiplier(enemy, selectedStageStarLevel) || 100
+                        //       : 100;
                             
-                            setSelectedEnemyDetail(enemyDetails);
-                            setSelectedEnemyMultiplier(multiplier);
+                        //     setSelectedEnemyDetail(enemyDetails);
+                        //     setSelectedEnemyMultiplier(multiplier);
                             
-                            if (!isEnemyDialogOpen) {
-                              setIsEnemyDialogOpen(true);
-                            }
-                          }
-                        }}
+                        //     if (!isEnemyDialogOpen) {
+                        //       setIsEnemyDialogOpen(true);
+                        //     }
+                        //   }
+                        // }}
                       >
                         <div className="flex items-center justify-between gap-4">
                           <div className="flex items-center gap-2 flex-wrap">

@@ -1,5 +1,5 @@
 import HeroSection from "@/app/heroSection";
-import FeatureGrid, { Feature } from "@/app/featureGridd";
+import FeatureGrid, { Feature } from "@/app/featureGrid";
 
 export const features: Feature[] = [
   {

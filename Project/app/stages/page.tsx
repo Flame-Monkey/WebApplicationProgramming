@@ -356,24 +356,24 @@ export default function StagePage() {
                       <Card 
                         key={idx} 
                         className="p-4 bg-gray-50 border-2 cursor-pointer hover:bg-gray-100 transition-all"
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          const enemyDetails = getEnemyDetails(enemy.name);
-                          if (enemyDetails) {
-                            const multiplier = isLegendStory(selectedStage.mapType) 
-                              ? getEnemyMultiplier(enemy, selectedStar) || 100
-                              : 100;
+                        // onClick={(e) => {
+                        //   e.stopPropagation();
+                        //   const enemyDetails = getEnemyDetails(enemy.name);
+                        //   if (enemyDetails) {
+                        //     const multiplier = isLegendStory(selectedStage.mapType) 
+                        //       ? getEnemyMultiplier(enemy, selectedStar) || 100
+                        //       : 100;
                             
-                            // Update enemy info without closing dialog
-                            setSelectedEnemy(enemyDetails);
-                            setSelectedEnemyMultiplier(multiplier);
+                        //     // Update enemy info without closing dialog
+                        //     setSelectedEnemy(enemyDetails);
+                        //     setSelectedEnemyMultiplier(multiplier);
                             
-                            // Only open if not already open
-                            if (!isEnemyDialogOpen) {
-                              setIsEnemyDialogOpen(true);
-                            }
-                          }
-                        }}
+                        //     // Only open if not already open
+                        //     if (!isEnemyDialogOpen) {
+                        //       setIsEnemyDialogOpen(true);
+                        //     }
+                        //   }
+                        // }}
                       >
                         <div className="flex items-center justify-between gap-4">
                           <div className="flex items-center gap-2 flex-wrap">
