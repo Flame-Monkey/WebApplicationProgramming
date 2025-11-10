@@ -4,6 +4,7 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "./utils";
 
 const colorStyles = {
+  default: "",
   blue: "bg-blue-600 hover:bg-blue-700 text-white",
   red: "bg-red-600 hover:bg-red-700 text-white",
   green: "bg-green-600 hover:bg-green-700 text-white",
@@ -35,6 +36,7 @@ const buttonVariants = cva(
         icon: "size-9 rounded-md",
       },
       color: {
+        default: colorStyles.default,
         blue: colorStyles.blue,
         red: colorStyles.red,
         green: colorStyles.green,
@@ -47,7 +49,7 @@ const buttonVariants = cva(
     defaultVariants: {
       variant: "default",
       size: "default",
-      color: "blue"
+      color: "default"
     },
   },
 );
