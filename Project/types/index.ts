@@ -11,7 +11,7 @@ export interface Cat {
   recharge: number;
   abilities: string[];
   targetAttributes: ('all' | '빨간적' | '떠있는적' | '메탈적' | '무속성적' | '천사적' | '흑적' | '좀비적' | '에일리언적' | '없음')[];
-  effects: ('느리게한다' | '멈추게한다' | '공격력다운' | '없음')[];
+  effects: ('느리게한다' | '멈추게한다' | '공격력다운' | '공격력업' | '없음')[];
   baseLevel?: number;
   hpPerLevel?: number;
   attackPerLevel?: number;
@@ -21,19 +21,17 @@ export interface Enemy {
   id: number;
   name: string;
   nameKo: string;
+  attributes: string[];
+  effects: string[];
+  abilities: string[];
   hp: number;
   attack: number;
   range: number;
   speed: number;
   knockbackCount: number;
-  abilities: string[];
   magnification: number;
-  attributes: ('빨강' | '떠있음' | '메탈' | '무속성' | '천사' | '흑' | '좀비' | '에일리언' | '없음')[];
-  effects?: ('느리게한다' | '멈추게한다' | '공격력다운' | '없음')[];
-  baseLevel?: number;
-  hpPerLevel?: number;
-  attackPerLevel?: number;
 }
+
 
 export interface EnemySpawn {
   name: string;

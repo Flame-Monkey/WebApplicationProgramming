@@ -17,7 +17,7 @@ interface FeatureGridProps {
 
 export default function FeatureGrid({ features }: FeatureGridProps) {
     return (
-        <div className="grid gap-6 md:grid-cols-4">
+        <div className="grid gap-6 md:grid-cols-6">
             {features.map((feature, index) => (
                 // 배열을 map으로 순회하며 각 FeatureCard 생성
                 <FeatureCard
