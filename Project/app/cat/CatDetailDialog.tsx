@@ -128,7 +128,6 @@ export default function CatDetailDialog({
             {/* Title */}
             <div>
               <DialogTitle className="text-blue-600">{selectedCat.Name}</DialogTitle>
-              <DialogDescription>캐릭터 상세 정보</DialogDescription>
             </div>
 
             {/* Level Control */}
