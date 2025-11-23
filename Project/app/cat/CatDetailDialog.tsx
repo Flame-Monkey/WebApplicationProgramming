@@ -9,7 +9,8 @@ import {
 } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
-import type { cat as Cat } from "@/types/cat";
+import type { unit as Cat } from "@/types/cat";
+import Link from "next/link";
 
 interface Props {
   isOpen: boolean;
@@ -118,7 +119,7 @@ export default function CatDetailDialog({
 
   const toKo = (map: Record<string, string>, key: string) =>
     map[key] ?? key;
-
+  const paddedId = selectedCat.Id.toString().padStart(3, "0");
   return (
     <Dialog open={isOpen} onOpenChange={onOpenChange}>
       <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto">
@@ -126,9 +127,13 @@ export default function CatDetailDialog({
           <div className="flex items-center justify-between">
 
             {/* Title */}
-            <div>
-              <DialogTitle className="text-blue-600">{selectedCat.Name}</DialogTitle>
-            </div>
+            <Link href={`/cat/${selectedCat.Id.toString().padStart(3, "0")}`}>
+              <div>
+                <DialogTitle className="text-blue-600 cursor-pointer hover:underline">
+                  {selectedCat.Name}
+                </DialogTitle>
+              </div>
+            </Link>
 
             {/* Level Control */}
             <div className="flex items-center gap-2">
