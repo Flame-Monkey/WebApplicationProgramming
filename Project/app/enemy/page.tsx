@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { enemies } from "@/data/mockData";
-import type { Enemy } from "@/types";
+import type { Enemy } from "@/types/common";
 
 import EnemyFiltersPanel from "./FiltersPanelEnemy";
 import EnemiesTable from "./EnemiesTable";
@@ -60,45 +60,39 @@ export default function EnemyCatsPage() {
   ];
 
   const abilities = [
-    /* === 새로운 group 1 === */
     { group: "1", value: '전체', label: '전체' },
     { group: "1", value: '없음', label: '없음' },
     { group: "1", value: '공격력 업', label: '공격력 업' },
     { group: "1", value: '살아남는다', label: '살아남는다' },
     { group: "1", value: '성 파괴가 특기', label: '성 파괴가 특기' },
-
-    /* === 새로운 group 2 === */
-    { group: "2", value: '크리티컬', label: '크리티컬' },
-    { group: "2", value: '메탈 킬러', label: '메탈 킬러' },
-    { group: "2", value: '좀비 킬러', label: '좀비 킬러' },
-    { group: "2", value: '영혼 공격', label: '영혼 공격' },
-    { group: "2", value: '베리어 브레이커', label: '베리어 브레이커' },
-    { group: "2", value: '쉴드 브레이커', label: '쉴드 브레이커' },
-    { group: "2", value: '혼신의 일격', label: '혼신의 일격' },
+    { group: "1", value: '크리티컬', label: '크리티컬' },
+    { group: "1", value: '메탈 킬러', label: '메탈 킬러' },
+    { group: "1", value: '좀비 킬러', label: '좀비 킬러' },
+    { group: "1", value: '영혼 공격', label: '영혼 공격' },
+    { group: "1", value: '베리어 브레이커', label: '베리어 브레이커' },
+    { group: "1", value: '쉴드 브레이커', label: '쉴드 브레이커' },
+    { group: "1", value: '혼신의 일격', label: '혼신의 일격' },
+    
     { group: "2", value: '격파시 머니 up', label: '격파시 머니 up' },
     { group: "2", value: '메탈', label: '메탈' },
-
-    /* === 새로운 group 3 === */
-    { group: "3", value: '소파동', label: '소파동' },
-    { group: "3", value: '파동 공격', label: '파동 공격' },
-    { group: "3", value: '소열파', label: '소열파' },
-    { group: "3", value: '열파 공격', label: '열파 공격' },
-    { group: "3", value: '열파 카운터', label: '열파 카운터' },
-    { group: "3", value: '폭파 공격', label: '폭파 공격' },
-    { group: "3", value: '파동스토퍼', label: '파동스토퍼' },
-    { group: "3", value: '소환', label: '소환' },
+    { group: "2", value: '소파동', label: '소파동' },
+    { group: "2", value: '파동 공격', label: '파동 공격' },
+    { group: "2", value: '소열파', label: '소열파' },
+    { group: "2", value: '열파 공격', label: '열파 공격' },
+    { group: "2", value: '열파 카운터', label: '열파 카운터' },
+    { group: "2", value: '폭파 공격', label: '폭파 공격' },
+    { group: "2", value: '파동스토퍼', label: '파동스토퍼' },
+    { group: "2", value: '소환', label: '소환' },
 
     { group: "3", value: '개체공격', label: '개체공격' },
-    { group: "3", value: '범위곻격', label: '범위곻격' }, // label 그대로 사용
+    { group: "3", value: '범위곻격', label: '범위곻격' }, 
     { group: "3", value: '원거리공격', label: '원거리공격' },
     { group: "3", value: '전방위공격', label: '전방위공격' },
 
-    /* === 새로운 group 4 === */
     { group: "4", value: '초생명체 특효', label: '초생명체 특효' },
     { group: "4", value: '초수 특효', label: '초수 특효' },
     { group: "4", value: '초현자 특효', label: '초현자 특효' },
 
-    /* === 새로운 group 5 === */
     { group: "5", value: '공격력 다운 무효', label: '공격력 다운 무효' },
     { group: "5", value: '날려버린다 무효', label: '날려버린다 무효' },
     { group: "5", value: '움직임을 멈춘다 무효', label: '움직임을 멈춘다 무효' },
@@ -110,7 +104,6 @@ export default function EnemyCatsPage() {
     { group: "5", value: '열파 데미지 무효', label: '열파 데미지 무효' },
     { group: "5", value: '폭파 데미지 무효', label: '폭파 데미지 무효' },
 
-    /* === 새로운 group 6 === */
     { group: "6", value: '공격력 다운 저항', label: '공격력 다운 저항' },
     { group: "6", value: '움직임을 멈춘다 저항', label: '움직임을 멈춘다 저항' },
     { group: "6", value: '움직임을 느리게 한다 저항', label: '움직임을 느리게 한다 저항' },
@@ -121,7 +114,6 @@ export default function EnemyCatsPage() {
     { group: "6", value: '고대의 저주 저항', label: '고대의 저주 저항' },
     { group: "6", value: '독 데미지 저항', label: '독 데미지 저항' },
 
-    /* === 새로운 group 7 === */
     { group: "7", value: '기본 체력 업', label: '기본 체력 업' },
     { group: "7", value: '기본 공격력 업', label: '기본 공격력 업' },
     { group: "7", value: '이동 속도 업', label: '이동 속도 업' },
@@ -129,9 +121,6 @@ export default function EnemyCatsPage() {
     { group: "7", value: '생산 코스트 할인', label: '생산 코스트 할인' },
     { group: "7", value: '생산 스피드 업', label: '생산 스피드 업' },
     { group: "7", value: '공격 간격 단축', label: '공격 간격 단축' },
-
-    /* === 새로운 group 8 === */
-    { group: "8", value: '사도 킬러', label: '사도 킬러' },
   ];
 
   /* ------------------ 토글 유틸 ------------------ */

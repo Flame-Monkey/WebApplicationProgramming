@@ -77,7 +77,7 @@ export default function EnemyFiltersPanel({
 
                 <button
                   onClick={() => setAttributeFilterMode("OR")}
-                  className={`px-3 py-1 rounded-md border ${
+                  className={`px-3 py-.5 rounded-md border ${
                     attributeFilterMode === "OR"
                       ? "bg-blue-500 text-white border-blue-500"
                       : "bg-white text-gray-700 border-gray-300 hover:bg-blue-50"
@@ -88,7 +88,7 @@ export default function EnemyFiltersPanel({
 
                 <button
                   onClick={() => setAttributeFilterMode("AND")}
-                  className={`px-3 py-1 rounded-md border ${
+                  className={`px-3 py-.5 rounded-md border ${
                     attributeFilterMode === "AND"
                       ? "bg-blue-500 text-white border-blue-500"
                       : "bg-white text-gray-700 border-gray-300 hover:bg-blue-50"
@@ -104,7 +104,7 @@ export default function EnemyFiltersPanel({
                 <button
                   key={attr.value}
                   onClick={() => toggleMulti(attr.value, setSelectedAttributes)}
-                  className={`px-4 py-2 rounded-lg border-2 whitespace-nowrap transition-all ${getColorClasses(
+                  className={`px-4 py-.5 rounded-lg border-2 whitespace-nowrap transition-all ${getColorClasses(
                     attr.color,
                     selectedAttributes.includes(attr.value)
                   )}`}
@@ -125,7 +125,7 @@ export default function EnemyFiltersPanel({
 
                 <button
                   onClick={() => setEffectFilterMode("OR")}
-                  className={`px-3 py-1 rounded-md border ${
+                  className={`px-3 py-.5 rounded-md border ${
                     effectFilterMode === "OR"
                       ? "bg-blue-500 text-white border-blue-500"
                       : "bg-white text-gray-700 border-gray-300 hover:bg-blue-50"
@@ -136,7 +136,7 @@ export default function EnemyFiltersPanel({
 
                 <button
                   onClick={() => setEffectFilterMode("AND")}
-                  className={`px-3 py-1 rounded-md border ${
+                  className={`px-3 py-.5 rounded-md border ${
                     effectFilterMode === "AND"
                       ? "bg-blue-500 text-white border-blue-500"
                       : "bg-white text-gray-700 border-gray-300 hover:bg-blue-50"
@@ -162,7 +162,7 @@ export default function EnemyFiltersPanel({
                     <button
                       key={effect.value}
                       onClick={() => toggleMulti(effect.value, setSelectedEffects)}
-                      className={`px-4 py-2 rounded-lg border-2 whitespace-nowrap transition-all ${
+                      className={`px-4 py-.5 rounded-lg border-2 whitespace-nowrap transition-all ${
                         selectedEffects.includes(effect.value)
                           ? "bg-blue-500 text-white border-blue-500"
                           : "bg-white text-gray-700 border-gray-300 hover:bg-blue-50"
@@ -186,7 +186,7 @@ export default function EnemyFiltersPanel({
 
                 <button
                   onClick={() => setAbilityFilterMode("OR")}
-                  className={`px-3 py-1 rounded-md border ${
+                  className={`px-3 py-.5 rounded-md border ${
                     abilityFilterMode === "OR"
                       ? "bg-blue-500 text-white border-blue-500"
                       : "bg-white text-gray-700 border-gray-300 hover:bg-blue-50"
@@ -197,7 +197,7 @@ export default function EnemyFiltersPanel({
 
                 <button
                   onClick={() => setAbilityFilterMode("AND")}
-                  className={`px-3 py-1 rounded-md border ${
+                  className={`px-3 py-.5 rounded-md border ${
                     abilityFilterMode === "AND"
                       ? "bg-blue-500 text-white border-blue-500"
                       : "bg-white text-gray-700 border-gray-300 hover:bg-blue-50"
@@ -225,7 +225,7 @@ export default function EnemyFiltersPanel({
                       onClick={() =>
                         toggleMulti(ability.value, setSelectedAbilities)
                       }
-                      className={`px-4 py-2 rounded-lg border-2 whitespace-nowrap transition-all ${
+                      className={`px-4 py-.5 rounded-lg border-2 whitespace-nowrap transition-all ${
                         selectedAbilities.includes(ability.value)
                           ? "bg-blue-500 text-white border-blue-500"
                           : "bg-white text-gray-700 border-gray-300 hover:bg-blue-50"

@@ -118,3 +118,7 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 ## Battle Cats DB
 - https://battlecats-db.com/
 - 일본어라 보기 힘듦
+
+## my gamatoto
+- https://mygamatoto.com/allcats
+- 크롤링해서 쓸거면 이거

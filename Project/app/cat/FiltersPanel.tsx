@@ -83,7 +83,7 @@ export default function FiltersPanel({
                 <button
                   key={rarity.value}
                   onClick={() => toggleMulti(rarity.value, setSelectedRarity)}
-                  className={`px-4 py-2 rounded-lg border-2 whitespace-nowrap transition-all ${getColorClasses(
+                  className={`px-4 py-.5 rounded-lg border-2 whitespace-nowrap transition-all ${getColorClasses(
                     rarity.color,
                     selectedRarity.includes(rarity.value)
                   )}`}
@@ -104,7 +104,7 @@ export default function FiltersPanel({
 
                 <button
                   onClick={() => setTargetFilterMode("OR")}
-                  className={`px-3 py-1 rounded-md border ${
+                  className={`px-3 py-.5 rounded-md border ${
                     targetFilterMode === "OR"
                       ? "bg-blue-500 text-white border-blue-500"
                       : "bg-white text-gray-700 border-gray-300 hover:bg-blue-50"
@@ -115,7 +115,7 @@ export default function FiltersPanel({
 
                 <button
                   onClick={() => setTargetFilterMode("AND")}
-                  className={`px-3 py-1 rounded-md border ${
+                  className={`px-3 py-.5 rounded-md border ${
                     targetFilterMode === "AND"
                       ? "bg-blue-500 text-white border-blue-500"
                       : "bg-white text-gray-700 border-gray-300 hover:bg-blue-50"
@@ -131,7 +131,7 @@ export default function FiltersPanel({
                 <button
                   key={target.value}
                   onClick={() => toggleMulti(target.value, setSelectedTargets)}
-                  className={`px-4 py-2 rounded-lg border-2 whitespace-nowrap transition-all ${getColorClasses(
+                  className={`px-4 py-.5 rounded-lg border-2 whitespace-nowrap transition-all ${getColorClasses(
                     target.color,
                     selectedTargets.includes(target.value)
                   )}`}
@@ -152,7 +152,7 @@ export default function FiltersPanel({
 
                 <button
                   onClick={() => setEffectFilterMode("OR")}
-                  className={`px-3 py-1 rounded-md border ${
+                  className={`px-3 py-.5 rounded-md border ${
                     effectFilterMode === "OR"
                       ? "bg-blue-500 text-white border-blue-500"
                       : "bg-white text-gray-700 border-gray-300 hover:bg-blue-50"
@@ -163,7 +163,7 @@ export default function FiltersPanel({
 
                 <button
                   onClick={() => setEffectFilterMode("AND")}
-                  className={`px-3 py-1 rounded-md border ${
+                  className={`px-3 py-.5 rounded-md border ${
                     effectFilterMode === "AND"
                       ? "bg-blue-500 text-white border-blue-500"
                       : "bg-white text-gray-700 border-gray-300 hover:bg-blue-50"
@@ -192,7 +192,7 @@ export default function FiltersPanel({
                       onClick={() =>
                         toggleMulti(effect.value, setSelectedEffects)
                       }
-                      className={`px-4 py-2 rounded-lg border-2 whitespace-nowrap transition-all ${
+                      className={`px-4 py-.5 rounded-lg border-2 whitespace-nowrap transition-all ${
                         selectedEffects.includes(effect.value)
                           ? "bg-blue-500 text-white border-blue-500"
                           : "bg-white text-gray-700 border-gray-300 hover:bg-blue-50"
@@ -216,7 +216,7 @@ export default function FiltersPanel({
 
                 <button
                   onClick={() => setAbilityFilterMode("OR")}
-                  className={`px-3 py-1 rounded-md border ${
+                  className={`px-3 py-.5 rounded-md border ${
                     abilityFilterMode === "OR"
                       ? "bg-blue-500 text-white border-blue-500"
                       : "bg-white text-gray-700 border-gray-300 hover:bg-blue-50"
@@ -227,7 +227,7 @@ export default function FiltersPanel({
 
                 <button
                   onClick={() => setAbilityFilterMode("AND")}
-                  className={`px-3 py-1 rounded-md border ${
+                  className={`px-3 py-.5 rounded-md border ${
                     abilityFilterMode === "AND"
                       ? "bg-blue-500 text-white border-blue-500"
                       : "bg-white text-gray-700 border-gray-300 hover:bg-blue-50"
@@ -255,7 +255,7 @@ export default function FiltersPanel({
                       onClick={() =>
                         toggleMulti(ability.value, setSelectedAbilities)
                       }
-                      className={`px-4 py-2 rounded-lg border-2 whitespace-nowrap transition-all ${
+                      className={`px-4 py-.5 rounded-lg border-2 whitespace-nowrap transition-all ${
                         selectedAbilities.includes(ability.value)
                           ? "bg-blue-500 text-white border-blue-500"
                           : "bg-white text-gray-700 border-gray-300 hover:bg-blue-50"

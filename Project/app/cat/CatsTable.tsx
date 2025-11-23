@@ -10,7 +10,7 @@ import {
     TableHeader,
     TableRow,
 } from "@/components/ui/table";
-import { Cat } from "@/types";
+import { Cat } from "@/types/common";
 
 interface Props {
     cats: Cat[];

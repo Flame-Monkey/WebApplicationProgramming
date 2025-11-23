@@ -11,7 +11,7 @@ import {
   TableRow,
 } from "@/components/ui/table";
 
-import type { Enemy } from "@/types";
+import type { Enemy } from "@/types/common";
 
 interface Props {
   enemies: Enemy[];
@@ -54,7 +54,7 @@ export default function EnemiesTable({
                 </TableCell>
               </TableRow>
             ) : (
-              enemies.map((enemy: Enemy, idx: number) => (
+              enemies.map((enemy: Enemy) => (
                 <TableRow
                   key={enemy.id}
                   className="cursor-pointer hover:bg-gray-50 transition-colors"

@@ -8,7 +8,7 @@ import {
 } from "@/components/ui/dialog";
 import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
-import type { Enemy } from "@/types";
+import type { Enemy } from "@/types/common";
 
 interface EnemyDetailDialogProps {
   isOpen: boolean;

@@ -1,5 +1,5 @@
 import FeatureCard from "@/app/featureCard";
-import { theme as colors } from "@/types";
+import { theme as colors } from "@/types/common";
 
 export interface Feature {
     icon: string;

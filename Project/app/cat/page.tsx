@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { allyCats } from '@/data/mockData';
-import type { Cat } from '@/types';
+import type { Cat } from '@/types/common';
 import CatDetailDialog from './CatDetailDialog';
 import CatsTable from './CatsTable';
 import FiltersPanel from './FiltersPanel';
@@ -139,9 +139,6 @@ export default function AllyCatsPage() {
     { group: "7", value: '생산 코스트 할인', label: '생산 코스트 할인' },
     { group: "7", value: '생산 스피드 업', label: '생산 스피드 업' },
     { group: "7", value: '공격 간격 단축', label: '공격 간격 단축' },
-
-    /* === 새로운 group 8 === */
-    { group: "8", value: '사도 킬러', label: '사도 킬러' },
   ];
 
 
