@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import { loadCatsById } from "./catsLoader";
+import { loadCatsById } from "@/lib/catsLoader";
 import Image from "next/image";
 
 interface PageProps {

@@ -71,22 +71,74 @@ const traitMap: Record<number, trait> = {
     96: "Demon",
 };
 
-function getAbilities(values: number[]): ability[] {
-    const out: ability[] = [];
-    const add = (c: boolean, a: ability) => { if (c) out.push(a); };
-    add(values[40] > 0, "AtkUp");
-    add(values[42] > 0, "LETHAL");
-    add(values[34] > 0, "BaseDestroyer");
-    add(values[31] > 0, "Critical");
-    add(values[112] > 0, "MetalKiller");
+
+export function getAffects(values: number[]): affect[] {
+    const out: affect[] = [];
+    const add = (cond: boolean, name: affect) => { if (cond) out.push(name); };
+
+    add(values[27] > 0, "Slow");          // 느리게한다
+    add(values[25] > 0, "Stop");          // 멈춘다
+    add(values[24] > 0, "Knockback");     // 날려버린다
+    add(values[37] > 0, "Weak");          // 공격력 다운
+    add(values[30] > 0, "MassiveDamage"); // 초데미지
+    add(values[81] > 0, "InsaneDamage");  // 극데미지
+    add(values[23] > 0, "Good");          // 엄청 강하다
+    add(values[29] > 0, "Resistant");     // 맷집이 좋다
+    add(values[80] > 0, "InsanelyTough"); // 초맷집이 좋다
+    add(values[92] > 0, "Curse");         // 저주
+    add(values[32] > 0, "Only");          // 공격 타겟 한정
+    add(values[75] > 0, "Warp");          // 워프
+    add(values[84] > 0, "ImuATK");        // 공격무효
+
     return out;
 }
 
-function getAffects(values: number[]): affect[] {
-    const out: affect[] = [];
-    const add = (c: boolean, a: affect) => { if (c) out.push(a); };
-    add(values[27] > 0, "Slow");
-    add(values[25] > 0, "Stop");
+export function getAbilities(values: number[]): ability[] {
+    const out: ability[] = [];
+    const add = (cond: boolean, name: ability) => { if (cond) out.push(name); };
+
+    // 기본 능력
+    add(values[40] > 0, "AtkUp");         // 공격력 업
+    add(values[42] > 0, "LETHAL");        // 살아남는다
+    add(values[34] > 0, "BaseDestroyer"); // 성 파괴
+    add(values[31] > 0, "Critical");      // 크리티컬
+    add(values[112] > 0, "MetalKiller");  // 메탈 킬러
+    add(values[52] > 0, "ZombieKiller");  // 좀비 킬러
+    add(values[98] > 0, "SoulStrike");    // 영혼 공격
+    add(values[70] > 0, "BarrierBreak");  // 베리어 브레이커
+    add(values[95] > 0, "ShieldBreak");   // 실드 브레이커
+    add(values[82] > 0, "StrickAttack");  // 혼신의 일격
+    add(values[33] > 0, "Bounty");        // 격파시 머니 UP
+    add(values[43] > 0, "Metallic");      // 메탈 몸
+
+    // 파동·열파·폭파 계열 (주의: 여러 플래그 연동)
+    add(values[94] > 0, "MiniWave");      // 소파동
+    add(values[35] > 0 && values[94] === 0, "Wave"); // 파동 (소파동 아닌 경우)
+    add(values[108] > 0, "MiniVolcano");  // 소열파 (MiniVolcano 플래그)
+    add(values[86] > 0 && values[108] === 0, "Volcano"); // 열파
+    add(values[109] > 0, "VolcanoCounter"); // 열파 카운터
+    add(values[113] > 0, "Blast");        // 폭파
+    add(values[47] > 0, "WaveBlocker");   // 파동 스토퍼
+
+    // 소환 계열
+    add(values[110] > 0, "Summon");       // 소환
+
+    // 초생명체 특효 계열
+    add(values[97] > 0, "ColosusSlayer");
+    add(values[105] > 0, "BehemothSlayer");
+    add(values[111] > 0, "SageHunter");
+
+    // 무효 계열
+    add(values[51] > 0, "ImuWeak");
+    add(values[48] > 0, "ImuKB");
+    add(values[49] > 0, "ImuStop");
+    add(values[50] > 0, "ImuSlow");
+    add(values[75] > 0, "ImuWarp");     // 워프 무효는 워프와 같은 인덱스
+    add(values[79] > 0, "ImuCurse");
+    add(values[90] > 0, "ImuPoison");
+    add(values[46] > 0, "ImuWave");
+    add(values[91] > 0, "ImuVolcano");
+    add(values[116] > 0, "ImuBlast");
     return out;
 }
 
